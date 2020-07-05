@@ -8,7 +8,7 @@ coin_info = open('coin_info','w')
 line_1 = "Name, " + "Symbol, " + "Price 1, " + "Price 2, " + "Price 3, " + "Price 4, " + "Price 5, " + "Price 6, " + "Price 7, " + "Price 8, " + "Price 9, " + "Price 10, " + "Price 11, " + "Price 12, "
 coin_info.write(line_1 + '\n')
 
-for loop in range(0,2):
+for loop in range(0,13):
     respond = requests.get(url_path)
     headers = {
         "authority": "web-api.coinmarketcap.com",
@@ -50,7 +50,7 @@ for loop in range(0,2):
 
     if loop == 1:
         break
-    time.sleep(2)
+    time.sleep(300)
         
 for key, prices in list_price.items():
     line_insert = f'{key}: '
